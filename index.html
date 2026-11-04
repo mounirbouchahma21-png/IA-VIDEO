@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10131d">
+<title>MOUNIR AI STUDIO</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0e16;--panel:#141a27;--panel2:#1b2333;--line:#2b3549;--txt:#f3f5fb;--muted:#9ba8bd;--accent:#8b7cff;--cyan:#50d8d0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#29234e 0,transparent 38%),var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+header{padding:20px 16px 12px;max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{font-weight:900;letter-spacing:.4px;font-size:19px}.brand span{color:var(--accent)}.tag{font-size:11px;color:#d4ceff;border:1px solid #51468c;padding:5px 9px;border-radius:30px}
+main{max-width:1100px;margin:auto;padding:10px 16px 36px}.intro{margin:8px 0 20px}.intro h1{font-size:clamp(25px,5vw,38px);margin:0 0 7px}.intro p{color:var(--muted);margin:0;line-height:1.7}
+.layout{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.panel{background:linear-gradient(160deg,#171e2d,#111724);border:1px solid var(--line);border-radius:18px;padding:16px;min-width:0}.panel h2{font-size:17px;margin:0 0 13px}
+.drop{border:1px dashed #56627a;border-radius:14px;padding:18px;text-align:center;background:#101624}.drop strong{display:block;margin-bottom:5px}.drop small{color:var(--muted)}
+input[type=file]{max-width:100%;margin-top:12px;color:var(--muted)}video{width:100%;max-height:390px;background:#05070c;border-radius:12px;margin-top:13px;display:none}
+textarea{width:100%;min-height:130px;resize:vertical;background:#0c1220;border:1px solid #36435b;border-radius:12px;padding:13px;color:var(--txt);font:inherit;line-height:1.7;outline:none}textarea:focus{border-color:var(--accent)}
+.examples{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0 15px}.chip{background:#20283a;border:1px solid #39445d;color:#d9def0;border-radius:30px;padding:7px 10px;font-size:12px;cursor:pointer}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.btn{border:0;border-radius:11px;padding:12px 16px;font:700 14px inherit;cursor:pointer}.primary{background:linear-gradient(100deg,#8b7cff,#5b9cff);color:white;flex:1}.secondary{background:#222c40;color:#e8ecf7;border:1px solid #3a4863}
+.status{margin-top:13px;padding:12px;border-radius:11px;background:#101827;border:1px solid #2b3950;color:#b9c5d8;font-size:13px;line-height:1.6;white-space:pre-wrap}.status.good{border-color:#276d65;color:#a5eee2}.status.warn{border-color:#78602d;color:#f5d99b}.status.error{border-color:#7d3d4a;color:#ffc0c9}
+.note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:12px}.meter{height:6px;background:#252e40;border-radius:20px;overflow:hidden;margin-top:10px;display:none}.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--cyan));transition:width .4s}
+.result video{display:block}.result a{color:#a9a0ff}.field{display:flex;gap:8px;align-items:center;margin-top:12px}.field input{flex:1;min-width:0;background:#0c1220;border:1px solid #36435b;border-radius:9px;padding:10px;color:white}
+footer{max-width:1100px;margin:0 auto;padding:0 16px 25px;color:#78869d;font-size:11px;line-height:1.6}
+@media(max-width:760px){.layout{grid-template-columns:1fr}header{align-items:flex-start}.panel{padding:13px}}
+</style></head>
+<body>
+<header><div class="brand">MOUNIR <span>AI</span> STUDIO</div><div class="tag">GENERATIVE VIDEO WORKSPACE</div></header>
+<main>
+<section class="intro"><h1>حرّر الفيديو بالكلمات</h1><p>ارفع الفيديو، اكتب التغيير الذي تريده، ثم أرسله إلى محرك الذكاء الاصطناعي المتصل بالمشروع.</p></section>
+<div class="layout">
+<section class="panel">
+<h2>1. الفيديو الأصلي</h2>
+<div class="drop"><strong>اختار فيديو من هاتفك</strong><small>MP4 أو MOV أو WebM — جرّب مقطعاً قصيراً أولاً</small><br><input id="videoFile" type="file" accept="video/*"></div>
+<video id="sourceVideo" controls playsinline></video>
+<div id="fileInfo" class="note">لم يتم اختيار فيديو بعد.</div>
+</section>
+<section class="panel">
+<h2>2. اكتب أمر التعديل</h2>
+<textarea id="prompt" placeholder="مثال: بدّل خلفية المشهد إلى مدينة مستقبلية ليلاً، واجعل الإضاءة سينمائية، وحافظ على ملامح الشخص وملابسه..."></textarea>
+<div class="examples">
+<button class="chip" data-prompt="بدّل الخلفية إلى شاطئ وقت الغروب، وحافظ على الشخصية الأصلية.">شاطئ وقت الغروب</button>
+<button class="chip" data-prompt="حوّل ألوان الفيديو إلى أسلوب سينمائي درامي مع الحفاظ على تفاصيل الوجه.">مظهر سينمائي</button>
+<button class="chip" data-prompt="اجعل المشهد شتوياً مع تساقط الثلج، وحافظ على حركة الشخصية قدر الإمكان.">أضف الثلج</button>
+<button class="chip" data-prompt="غيّر ملابس الشخصية إلى بدلة رسمية سوداء مع الحفاظ على هويتها.">تغيير الملابس</button>
+</div>
+<div class="row"><button id="generate" class="btn primary">إرسال إلى محرك الذكاء الاصطناعي</button><button id="clear" class="btn secondary">مسح</button></div>
+<div class="meter" id="meter"><i id="meterBar"></i></div>
+<div id="status" class="status">الحالة: الواجهة جاهزة. يلزم تشغيل الخادم وربط مزوّد توليد الفيديو قبل تنفيذ التعديلات التوليدية.</div>
+<p class="note">تنبيه: كتابة الأمر وحدها لا تغيّر الفيديو. يجب أن يكون خادم المشروع موصولاً فعلياً بنموذج فيديو AI. لا تضع مفتاح API في هذه الصفحة.</p>
+</section>
+<section class="panel result" style="grid-column:1/-1">
+<h2>3. النتيجة المعدّلة</h2>
+<div id="resultEmpty" class="note">ستظهر النتيجة هنا بعد أن يرجعها محرك الذكاء الاصطناعي.</div>
+<video id="resultVideo" controls playsinline></video>
+<a id="download" hidden download="mounir-ai-result.mp4">تحميل الفيديو المعدّل</a>
+</section>
+</div>
+</main>
+<footer>MOUNIR AI STUDIO — نسخة تأسيسية قابلة للربط بمحركات توليد الفيديو. معالجة الفيديو تعتمد على مزوّد خارجي أو خادم GPU، وقد تكون لها تكلفة وحدود استخدام.</footer>
+<script>
+const $=id=>document.getElementById(id);
+let selectedFile=null, pollTimer=null;
+const setStatus=(msg,type='')=>{const s=$('status');s.textContent=msg;s.className='status '+type;};
+$('videoFile').addEventListener('change',e=>{
+ selectedFile=e.target.files[0]||null;
+ if(!selectedFile){$('sourceVideo').style.display='none';$('fileInfo').textContent='لم يتم اختيار فيديو بعد.';return;}
+ const url=URL.createObjectURL(selectedFile);$('sourceVideo').src=url;$('sourceVideo').style.display='block';
+ $('fileInfo').textContent=`${selectedFile.name} — ${(selectedFile.size/1024/1024).toFixed(1)} MB — ${selectedFile.type||'نوع غير معروف'}`;
+});
+document.querySelectorAll('.chip').forEach(b=>b.addEventListener('click',()=>{$('prompt').value=b.dataset.prompt;}));
+$('clear').addEventListener('click',()=>{$('prompt').value='';});
+function progress(on){$('meter').style.display=on?'block':'none';$('meterBar').style.width=on?'12%':'0%';}
+async function api(path,opts={}){const r=await fetch(path,opts);const data=await r.json().catch(()=>({}));if(!r.ok)throw new Error(data.detail||data.error||`HTTP ${r.status}`);return data;}
+async function pollJob(id){
+ let tries=0;
+ while(tries++<180){
+  await new Promise(r=>setTimeout(r,5000));
+  const j=await api(`/api/jobs/${encodeURIComponent(id)}`);
+  const p=Math.max(12,Math.min(95,Number(j.progress||0)));$('meterBar').style.width=p+'%';
+  setStatus(`المعالجة: ${j.status||'قيد التنفيذ'}${j.message?'\n'+j.message:''}`);
+  if(j.status==='completed'&&j.result_url){
+   $('resultVideo').src=j.result_url;$('resultVideo').style.display='block';$('resultEmpty').style.display='none';
+   $('download').href=j.result_url;$('download').hidden=false;$('meterBar').style.width='100%';setStatus('اكتملت المعالجة. يمكنك مشاهدة الفيديو وتحميله.','good');return;
+  }
+  if(j.status==='failed')throw new Error(j.error||'فشلت المعالجة في الخادم.');
+ }
+ throw new Error('انتهت مهلة انتظار النتيجة. تحقق من حالة المهمة في الخادم.');
+}
+$('generate').addEventListener('click',async()=>{
+ const prompt=$('prompt').value.trim();
+ if(!selectedFile){setStatus('اختار الفيديو أولاً.','warn');return;}
+ if(!prompt){setStatus('كتب الأمر الذي تريد تطبيقه على الفيديو.','warn');return;}
+ $('generate').disabled=true;progress(true);$('meterBar').style.width='8%';
+ try{
+  setStatus('كنتحقق من اتصال محرك الذكاء الاصطناعي...');
+  await api('/api/health');
+  const fd=new FormData();fd.append('video',selectedFile);fd.append('prompt',prompt);
+  setStatus('تم الاتصال. جارٍ إرسال الفيديو والأمر إلى الخادم...');
+  const job=await api('/api/jobs',{method:'POST',body:fd});
+  if(!job.job_id)throw new Error('الخادم لم يرجع رقم المهمة.');
+  setStatus('تم إرسال المهمة. جارٍ انتظار الفيديو المعدّل...');
+  await pollJob(job.job_id);
+ }catch(err){
+  setStatus('لم يتم تنفيذ التعديل.\n'+err.message+'\n\nإذا ظهر خطأ في الاتصال، شغّل backend واربط مزوّد فيديو AI أولاً.','error');
+ }finally{$('generate').disabled=false;}
+});
+</script></body></html>
