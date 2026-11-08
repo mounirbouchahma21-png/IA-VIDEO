@@ -4,27 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#080b16">
-<meta name="description" content="MOUNIR STUDIO - محرر فيديو بسيط لإضافة تلاوة القرآن والآيات إلى الفيديو.">
-<title>MOUNIR STUDIO — Quran Video Editor V6</title>
+<meta name="description" content="MOUNIR STUDIO - محرر فيديو احترافي لإضافة تلاوة القرآن والآيات إلى الفيديو.">
+<title>MOUNIR STUDIO — Video Editor V7.5</title>
 <style>
 :root{--bg:#080b16;--panel:#12182a;--panel2:#19223a;--line:#2a3655;--txt:#f4f6ff;--muted:#9eabc8;--violet:#8b5cf6;--cyan:#22d3ee;--good:#86efac;--warn:#fdba74}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#24204b 0,transparent 38%),var(--bg);color:var(--txt);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
 header{background:#090d1aee;border-bottom:1px solid var(--line);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px}.brand{font-weight:950;letter-spacing:.4px}.brand b{color:var(--cyan)}.version{font-size:11px;color:#d8c9ff;border:1px solid #62469a;border-radius:30px;padding:5px 9px}
 main{max-width:1240px;margin:auto;padding:15px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.9fr);gap:14px}.panel{min-width:0;background:linear-gradient(145deg,#151c30,#101525);border:1px solid var(--line);border-radius:17px;padding:14px;margin-bottom:12px;box-shadow:0 12px 35px #0002}
-h2{font-size:16px;margin:0 0 12px}h3{font-size:14px;margin:0 0 9px;color:#dbe5ff}.preview{aspect-ratio:16/9;min-height:200px;background:#03050a;border:1px solid #35415f;border-radius:13px;display:grid;place-items:center;overflow:hidden;position:relative}video{display:none;width:100%;height:100%;max-height:560px;object-fit:contain}#empty{color:var(--muted);text-align:center;line-height:2;padding:12px}#captionPreview{position:absolute;left:5%;right:5%;text-align:center;white-space:pre-wrap;font-weight:900;text-shadow:0 2px 5px #000,0 0 8px #000;pointer-events:none;overflow-wrap:anywhere}
+h2{font-size:16px;margin:0 0 12px}h3{font-size:14px;margin:0 0 9px;color:#dbe5ff}.preview{aspect-ratio:16/9;min-height:200px;background:#03050a;border:1px solid #35415f;border-radius:13px;display:grid;place-items:center;overflow:hidden;position:relative}video{display:none;width:100%;height:100%;max-height:560px;object-fit:contain}#empty{color:var(--muted);text-align:center;line-height:2;padding:12px}#vignettePreview{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 35%,#000 100%);opacity:0}#captionPreview{position:absolute;left:5%;right:5%;text-align:center;white-space:pre-wrap;font-weight:900;text-shadow:0 2px 5px #000,0 0 8px #000;pointer-events:none;overflow-wrap:anywhere}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin:11px 0}button,.filelabel{cursor:pointer;border:1px solid var(--line);border-radius:10px;background:var(--panel2);color:var(--txt);padding:10px 12px;font-weight:750;font-size:12px;display:inline-flex;align-items:center;justify-content:center}button.primary{background:linear-gradient(100deg,#7c3aed,#2563eb);border:0}button:disabled{opacity:.4;cursor:not-allowed}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 input,select,textarea{width:100%;background:#0b1120;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;min-width:0}input[type=range]{padding:0;accent-color:var(--violet)}input[type=color]{height:40px;padding:3px}label{display:block;font-size:11px;color:var(--muted);margin:9px 0 5px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}.small{font-size:11px;color:var(--muted);line-height:1.75}.status{font-size:12px;color:#a5f3fc;min-height:22px;margin-top:8px}.trackbox,.tool{background:#0c1221;border:1px solid var(--line);border-radius:12px;padding:12px;margin-top:11px}.track{height:33px;background:linear-gradient(90deg,#3a236e,#17495d);border:1px solid #4b5c83;border-radius:8px;padding:7px 10px;font-size:11px;overflow:hidden;white-space:nowrap}.note{border-right:3px solid var(--cyan);padding:8px 10px;background:#102033;border-radius:8px}.statusbox{background:#0b1120;border-radius:10px;padding:9px;margin-top:9px}.danger{color:var(--warn)}.success{color:var(--good)}.hidden{display:none!important}footer{text-align:center;color:var(--muted);font-size:11px;padding:12px 16px 28px}
 @media(max-width:850px){main{grid-template-columns:1fr;padding:10px}header{padding:11px 12px}.panel{padding:12px}}
 </style>
 </head>
 <body>
-<header><span class="brand">MOUNIR <b>STUDIO</b></span><span class="version">V6 · QURAN VIDEO EDITOR</span></header>
+<header><span class="brand">MOUNIR <b>STUDIO</b></span><span class="version">V7.5 · PRO VIDEO EDITOR</span></header>
 <main>
 <section>
  <div class="panel">
   <h2>🎬 مساحة تعديل الفيديو</h2>
   <label class="filelabel" for="videoFile">＋ حمّل فيديو من الهاتف أو الحاسوب</label><input id="videoFile" type="file" accept="video/*" hidden>
-  <div class="preview" style="margin-top:12px"><video id="video" playsinline controls preload="metadata"></video><div id="empty">🎥<br><b>حمّل فيديو للبدء</b><br><span class="small">يمكنك تحديد المقطع وإضافة التلاوة والآيات</span></div><div id="captionPreview"></div></div>
+  <div class="preview" style="margin-top:12px"><video id="video" playsinline controls preload="metadata"></video><div id="empty">🎥<br><b>حمّل فيديو للبدء</b><br><span class="small">يمكنك تحديد المقطع وإضافة التلاوة والآيات</span></div><div id="vignettePreview"></div><div id="captionPreview"></div></div>
   <div class="actions"><button id="play" disabled>▶ تشغيل / إيقاف</button><button id="toStart" disabled>↺ بداية المقطع</button><button class="primary" id="export" disabled>⬇ تصدير الفيديو</button></div>
   <div class="trackbox"><div class="small">المسار الزمني للفيديو</div><div class="track" id="videoTrack">لم تتم إضافة فيديو</div>
    <label for="start">بداية المقطع: <span id="startText">0.0</span> ثانية</label><input id="start" type="range" min="0" max="0" value="0" step=".1" disabled>
@@ -32,15 +32,14 @@ input,select,textarea{width:100%;background:#0b1120;color:var(--txt);border:1px 
   </div><div class="status" id="status" role="status" aria-live="polite">جاهز. حمّل فيديو للبدء.</div>
  </div>
  <div class="panel"><h2>📖 كتابة الآيات على الفيديو</h2>
-  <label for="caption">نص الآية بالتشكيل (راجعه حرفياً قبل التصدير)</label><textarea id="caption" rows="3" maxlength="1000" placeholder="اكتب الآية أو النص القرآني هنا..."></textarea>
+  <label for="caption">نص الآية بالتشكيل (راجع التشكيل قبل التصدير)</label><textarea id="caption" rows="3" maxlength="1000" placeholder="اكتب الآية أو النص القرآني هنا..."></textarea>
   <div class="grid2"><div><label for="textColor">لون النص</label><input id="textColor" type="color" value="#ffffff"></div><div><label for="textSize">حجم النص</label><select id="textSize"><option value="22">صغير</option><option value="30" selected>متوسط</option><option value="42">كبير</option><option value="54">كبير جداً</option></select></div></div>
   <label for="textPosition">موضع الكتابة</label><select id="textPosition"><option value="bottom">أسفل الفيديو</option><option value="middle">وسط الفيديو</option><option value="top">أعلى الفيديو</option></select>
-  <p class="small">النص لا يُجلب تلقائياً من المصحف في هذه النسخة. أدخل النص الصحيح بنفسك وراجعه قبل نشر الفيديو.</p>
  </div>
 </section>
 <aside>
  <div class="panel"><h2>🎙️ اختيار المقرئ والسورة والآيات</h2>
-  <div class="note small">اختار المقرئ والسورة ورقم أول وآخر آية، ثم اضغط على الاستماع. سيشغّل الاستوديو الآيات المختارة بالتتابع. هذه معاينة صوتية عبر الإنترنت.</div>
+  <div class="note small">اختار المقرئ والسورة ورقم الآية للاستماع المباشر.</div>
   <label for="reciter">المقرئ</label><select id="reciter"><option value="">جارٍ تحميل القراء...</option></select>
   <label for="surah">السورة</label><select id="surah"><option value="">جارٍ تحميل السور...</option></select>
   <div class="grid2"><div><label for="ayahFrom">من الآية</label><input id="ayahFrom" type="number" min="1" value="1" inputmode="numeric"></div><div><label for="ayahTo">إلى الآية</label><input id="ayahTo" type="number" min="1" value="1" inputmode="numeric"></div></div>
@@ -48,18 +47,24 @@ input,select,textarea{width:100%;background:#0b1120;color:var(--txt);border:1px 
   <audio id="quranAudio" controls preload="none" style="width:100%;height:38px"></audio>
   <div class="small" id="reciterInfo">يتم تحميل كتالوج القراء والسور عند الاتصال بالإنترنت.</div>
   <div class="statusbox small" id="ayahProgress">لم يتم اختيار تلاوة بعد.</div>
-  <div class="tool"><h3>🔊 الصوت الذي سيدخل في الفيديو النهائي</h3>
-   <label for="localAudioFile">حمّل ملف التلاوة من جهازك</label><input id="localAudioFile" type="file" accept="audio/*">
-   <audio id="localAudio" controls preload="metadata" style="width:100%;height:38px;display:none"></audio>
-   <div class="grid2"><div><label for="audioDelay">تأخير بداية التلاوة (ثانية)</label><input id="audioDelay" type="number" min="0" max="600" step=".1" value="0"></div><div><label for="qVol">مستوى صوت التلاوة</label><input id="qVol" type="range" min="0" max="1" step=".01" value="1"></div></div>
-   <p class="small danger">مهم: معاينة المقرئ من الإنترنت لا تُدمج تلقائياً في ملف التصدير بسبب قيود المتصفح. لإضافة التلاوة إلى الفيديو النهائي، حمّل ملفاً صوتياً مسموحاً باستعماله من جهازك. راجع حقوق التسجيل قبل النشر.</p>
+  <div class="tool"><h3>🔊 صوت التلاوة المدمج في الفيديو النهائي</h3>
+   <label for="localAudioFile">حمّل ملف التلاوة الصوتي (MP3 / WAV)</label><input id="localAudioFile" type="file" accept="audio/*">
+   <audio id="localAudio" controls preload="metadata" style="width:100%;height:38px;margin-top:8px;display:none"></audio>
+   <div class="grid2"><div><label for="audioDelay">تأخير الصوت (ثانية)</label><input id="audioDelay" type="number" min="0" max="600" step=".1" value="0"></div><div><label for="qVol">مستوى الصوت</label><input id="qVol" type="range" min="0" max="1" step=".01" value="1"></div></div>
   </div>
  </div>
- <div class="panel"><h2>🎨 تحسين الصورة</h2><label for="look">تأثير الفيديو</label><select id="look"><option value="none">أصلي</option><option value="contrast(1.15) saturate(1.12)">تحسين الألوان والتباين</option><option value="brightness(1.12) contrast(1.08)">إضاءة محسّنة</option><option value="saturate(.65) contrast(1.08)">ألوان هادئة</option><option value="grayscale(1)">أبيض وأسود</option><option value="sepia(.45)">سينمائي دافئ</option></select><p class="small">هذه فلاتر بصرية بسيطة تعمل داخل المتصفح، وليست تحسيناً بالذكاء الاصطناعي.</p></div>
- <div class="panel"><h2>📤 معلومات التصدير</h2><p class="small">يُصدّر المقطع المحدد بصيغة WebM. يحتاج التصدير إلى متصفح يدعم MediaRecorder وCanvas captureStream، مثل إصدار حديث من Chrome. جودة وسرعة التصدير تتأثران بقدرات الجهاز وحجم الفيديو.</p><p class="small success">هذا المشروع لا يحتاج مفتاح API ولا خدمة ذكاء اصطناعي مدفوعة.</p></div>
+ <div class="panel"><h2>🎨 تحسين الصورة والمؤثرات</h2>
+  <label for="look">فلتر جاهز</label><select id="look"><option value="none">أصلي</option><option value="contrast(1.15) saturate(1.12)">تحسين الألوان والتباين</option><option value="brightness(1.12) contrast(1.08)">إضاءة محسّنة</option><option value="saturate(.65) contrast(1.08)">ألوان هادئة</option><option value="grayscale(1)">أبيض وأسود</option><option value="sepia(.45)">سينمائي دافئ</option><option value="contrast(1.2) saturate(1.25) brightness(1.04)">سينمائي قوي</option></select>
+  <div class="grid2"><div><label for="brightness">الإضاءة: <b id="brightnessVal">100%</b></label><input id="brightness" type="range" min="50" max="150" value="100"></div><div><label for="contrast">التباين: <b id="contrastVal">100%</b></label><input id="contrast" type="range" min="50" max="160" value="100"></div></div>
+  <div class="grid2"><div><label for="saturation">تشبع الألوان: <b id="saturationVal">100%</b></label><input id="saturation" type="range" min="0" max="180" value="100"></div><div><label for="blur">ضبابية: <b id="blurVal">0px</b></label><input id="blur" type="range" min="0" max="5" step=".5" value="0"></div></div>
+  <div class="grid2"><div><label for="zoom">تقريب الصورة: <b id="zoomVal">100%</b></label><input id="zoom" type="range" min="100" max="140" value="100"></div><div><label for="vignette">تعتيم الأطراف: <b id="vignetteVal">0%</b></label><input id="vignette" type="range" min="0" max="100" value="0"></div></div>
+  <label for="speed">سرعة الفيديو</label><select id="speed"><option value="0.5">0.5× بطيء</option><option value="0.75">0.75×</option><option value="1" selected>1× عادي</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2× سريع</option></select>
+  <div class="actions"><button id="resetEffects" type="button">↺ إعادة ضبط التأثيرات</button></div>
+ </div>
+ <div class="panel"><h2>📤 التصدير والحفظ</h2><p class="small">يُ صدّر المقطع بجودة عالية ونقاء صوتي دقيق مع الفلاتر عبر المتصفح مباشرة دون الحاجة لخادم خارجي.</p></div>
 </aside>
 </main>
-<footer>MOUNIR STUDIO · V6 · Video editing + Quran recitation selection</footer>
+<footer>MOUNIR STUDIO · V7.5 Pro Video Editor</footer>
 <script>
 'use strict';
 const $ = id => document.getElementById(id);
@@ -67,336 +72,20 @@ const video = $('video');
 const quranAudio = $('quranAudio');
 const localAudio = $('localAudio');
 const API = 'https://alfurqan.online/api/v1';
-let videoURL = null;
-let localAudioURL = null;
-let reciters = [];
-let queue = [];
-let queueIndex = 0;
-let isExporting = false;
-let activeRecorder = null;
-let activeStream = null;
-let animationFrame = 0;
-let audioStartTimer = 0;
+let videoURL = null, localAudioURL = null;
+let reciters = [], queue = [], queueIndex = 0;
+let isExporting = false, activeRecorder = null, activeStream = null, animationFrame = 0, audioStartTimer = 0;
 
-function setStatus(message) { $('status').textContent = message; }
-function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-}
+function setStatus(msg) { $('status').textContent = msg; }
+function escapeHTML(str) { return String(str).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
 async function getJSON(url) {
-  const response = await fetch(url, {headers:{'Accept':'application/json'}});
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
-  return response.json();
+  const res = await fetch(url, {headers:{'Accept':'application/json'}});
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
 }
+
 async function initCatalog() {
-  const reciterSelect = $('reciter');
-  const surahSelect = $('surah');
   try {
-    const [reciterData, surahData] = await Promise.all([getJSON(`${API}/reciters`), getJSON(`${API}/surahs`)]);
-    reciters = Array.isArray(reciterData.reciters) ? reciterData.reciters : [];
-    const surahs = Array.isArray(surahData.surahs) ? surahData.surahs : [];
-    if (!reciters.length || !surahs.length) throw new Error('Empty catalogue');
-    reciterSelect.innerHTML = reciters.map(item => `<option value="${escapeHTML(item.id)}">${escapeHTML(item.arabicName || item.name || 'قارئ')}</option>`).join('');
-    surahSelect.innerHTML = surahs.map(item => `<option value="${Number(item.number)}" data-count="${Number(item.ayahCount)}">${Number(item.number)}. ${escapeHTML(item.name || '')}</option>`).join('');
-    $('reciterInfo').textContent = `تم تحميل ${reciters.length} قارئاً و${surahs.length} سورة.`;
-    updateAyahLimits();
-  } catch (error) {
-    reciterSelect.innerHTML = '<option value="">تعذر تحميل القراء</option>';
-    surahSelect.innerHTML = '<option value="">تعذر تحميل السور</option>';
-    $('reciterInfo').textContent = 'تعذر الاتصال بكتالوج القراء. تحقق من الإنترنت أو استعمل ملف تلاوة محلياً.';
-  }
-}
-function updateAyahLimits() {
-  const selected = $('surah').selectedOptions[0];
-  if (!selected) return;
-  const count = Number(selected.dataset.count) || 0;
-  $('ayahFrom').max = count;
-  $('ayahTo').max = count;
-  $('ayahFrom').value = Math.min(Math.max(1, Number($('ayahFrom').value) || 1), count || 1);
-  $('ayahTo').value = Math.min(Math.max(Number($('ayahTo').value) || 1, Number($('ayahFrom').value)), count || 1);
-}
-$('surah').addEventListener('change', () => {
-  updateAyahLimits();
-  $('ayahTo').value = $('ayahFrom').value;
-});
-$('ayahFrom').addEventListener('change', () => {
-  const max = Number($('ayahFrom').max) || 286;
-  const value = Math.min(Math.max(1, Number($('ayahFrom').value) || 1), max);
-  $('ayahFrom').value = value;
-  if (Number($('ayahTo').value) < value) $('ayahTo').value = value;
-});
-$('ayahTo').addEventListener('change', () => {
-  const max = Number($('ayahTo').max) || 286;
-  $('ayahTo').value = Math.min(Math.max(Number($('ayahFrom').value) || 1, Number($('ayahTo').value) || 1), max);
-});
-$('playRange').addEventListener('click', () => {
-  const reciterId = $('reciter').value;
-  const surahNumber = Number($('surah').value);
-  const from = Number($('ayahFrom').value);
-  const to = Number($('ayahTo').value);
-  const max = Number($('ayahTo').max);
-  if (!reciterId || !surahNumber || !max) { $('reciterInfo').textContent = 'اختار المقرئ والسورة بعد تحميل القائمة.'; return; }
-  if (!Number.isInteger(from) || !Number.isInteger(to) || from < 1 || to < from || to > max) { $('reciterInfo').textContent = `أرقام الآيات غير صحيحة. هذه السورة فيها ${max} آية.`; return; }
-  queue = [];
-  for (let number = from; number <= to; number++) queue.push({reciterId, surahNumber, number});
-  queueIndex = 0;
-  playNextAyah();
-});
-function playNextAyah() {
-  if (queueIndex >= queue.length) {
-    $('ayahProgress').textContent = 'انتهت الآيات المختارة.';
-    queue = [];
-    return;
-  }
-  const item = queue[queueIndex];
-  $('ayahProgress').textContent = `الآية ${item.number} · التقدم ${queueIndex + 1} من ${queue.length}`;
-  quranAudio.src = `${API}/audio/${encodeURIComponent(item.reciterId)}/surah/${item.surahNumber}/ayah/${item.number}`;
-  quranAudio.volume = Number($('qVol').value);
-  quranAudio.play().catch(() => {
-    $('reciterInfo').textContent = 'تعذر تشغيل التلاوة. جرّب قارئاً آخر أو تحقق من الاتصال.';
-    queue = [];
-  });
-}
-quranAudio.addEventListener('ended', () => { if (queue.length) { queueIndex++; playNextAyah(); } });
-quranAudio.addEventListener('error', () => { if (queue.length) { $('reciterInfo').textContent = 'تعذر تحميل ملف الآية من مصدر الصوت.'; queue = []; } });
-$('stopQuran').addEventListener('click', () => {
-  queue = [];
-  quranAudio.pause();
-  quranAudio.currentTime = 0;
-  $('ayahProgress').textContent = 'تم إيقاف التلاوة.';
-});
-$('qVol').addEventListener('input', () => {
-  quranAudio.volume = Number($('qVol').value);
-  localAudio.volume = Number($('qVol').value);
-});
-$('videoFile').addEventListener('change', event => {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
-  if (!file.type.startsWith('video/')) { setStatus('المرجو اختيار ملف فيديو صالح.'); return; }
-  if (videoURL) URL.revokeObjectURL(videoURL);
-  videoURL = URL.createObjectURL(file);
-  video.src = videoURL;
-  video.style.display = 'block';
-  $('empty').style.display = 'none';
-  video.onloadedmetadata = () => {
-    const duration = Number.isFinite(video.duration) ? video.duration : 0;
-    if (!duration) { setStatus('تعذر قراءة مدة الفيديو أو أن الملف غير مدعوم.'); return; }
-    $('start').max = duration;
-    $('end').max = duration;
-    $('start').value = 0;
-    $('end').value = duration;
-    $('start').disabled = false;
-    $('end').disabled = false;
-    $('play').disabled = false;
-    $('toStart').disabled = false;
-    $('export').disabled = false;
-    $('videoTrack').textContent = `${file.name} · ${duration.toFixed(1)} ثانية`;
-    updateRangeLabels();
-    setStatus('تم تحميل الفيديو. حدد المقطع ثم اختر التلاوة.');
-  };
-  video.onerror = () => setStatus('هذا الفيديو غير مدعوم في المتصفح. جرّب MP4 بترميز H.264.');
-});
-$('localAudioFile').addEventListener('change', event => {
-  const file = event.target.files && event.target.files[0];
-  if (!file) return;
-  if (!file.type.startsWith('audio/')) { setStatus('المرجو اختيار ملف صوتي صالح.'); return; }
-  if (localAudioURL) URL.revokeObjectURL(localAudioURL);
-  localAudioURL = URL.createObjectURL(file);
-  localAudio.src = localAudioURL;
-  localAudio.style.display = 'block';
-  localAudio.volume = Number($('qVol').value);
-  setStatus('تم تحميل ملف التلاوة المحلي. سيُستخدم هذا الملف في التصدير.');
-});
-$('play').addEventListener('click', () => {
-  if (video.paused) video.play().catch(() => setStatus('تعذر تشغيل الفيديو.'));
-  else video.pause();
-});
-$('toStart').addEventListener('click', () => {
-  video.pause();
-  video.currentTime = Number($('start').value) || 0;
-  quranAudio.pause();
-  localAudio.pause();
-});
-$('start').addEventListener('input', () => {
-  if (Number($('start').value) > Number($('end').value)) $('end').value = $('start').value;
-  updateRangeLabels();
-});
-$('end').addEventListener('input', () => {
-  if (Number($('end').value) < Number($('start').value)) $('start').value = $('end').value;
-  updateRangeLabels();
-});
-function updateRangeLabels() {
-  $('startText').textContent = Number($('start').value).toFixed(1);
-  $('endText').textContent = Number($('end').value).toFixed(1);
-}
-function updateCaption() {
-  const preview = $('captionPreview');
-  preview.textContent = $('caption').value;
-  preview.style.color = $('textColor').value;
-  preview.style.fontSize = `${$('textSize').value}px`;
-  preview.style.top = $('textPosition').value === 'top' ? '8%' : $('textPosition').value === 'middle' ? '45%' : 'auto';
-  preview.style.bottom = $('textPosition').value === 'bottom' ? '8%' : 'auto';
-}
-['caption','textColor','textSize','textPosition'].forEach(id => $(id).addEventListener('input', updateCaption));
-$('look').addEventListener('change', () => { video.style.filter = $('look').value === 'none' ? 'none' : $('look').value; });
-function wrapText(context, text, maxWidth) {
-  const words = text.split(/\s+/);
-  const lines = [];
-  let line = '';
-  for (const word of words) {
-    const candidate = line ? `${line} ${word}` : word;
-    if (context.measureText(candidate).width > maxWidth && line) { lines.push(line); line = word; }
-    else line = candidate;
-  }
-  if (line) lines.push(line);
-  return lines;
-}
-function drawVideoFrame(context, canvas) {
-  context.fillStyle = '#000';
-  context.fillRect(0, 0, canvas.width, canvas.height);
-  const sourceWidth = video.videoWidth || canvas.width;
-  const sourceHeight = video.videoHeight || canvas.height;
-  const scale = Math.min(canvas.width / sourceWidth, canvas.height / sourceHeight);
-  const width = sourceWidth * scale;
-  const height = sourceHeight * scale;
-  context.filter = $('look').value === 'none' ? 'none' : $('look').value;
-  context.drawImage(video, (canvas.width - width) / 2, (canvas.height - height) / 2, width, height);
-  context.filter = 'none';
-  const text = $('caption').value.trim();
-  if (!text) return;
-  const fontSize = Number($('textSize').value) * 1.35;
-  context.font = `bold ${fontSize}px system-ui, sans-serif`;
-  context.textAlign = 'center';
-  if ('direction' in context) context.direction = 'rtl';
-  context.lineWidth = Math.max(3, fontSize / 10);
-  context.strokeStyle = '#000';
-  context.fillStyle = $('textColor').value;
-  const lines = wrapText(context, text, canvas.width * .88);
-  const lineHeight = fontSize * 1.25;
-  let y = $('textPosition').value === 'top' ? fontSize * 1.8 : $('textPosition').value === 'middle' ? canvas.height / 2 : canvas.height - fontSize * 1.2 * lines.length;
-  if ($('textPosition').value === 'middle') y -= (lines.length - 1) * lineHeight / 2;
-  for (const line of lines) {
-    context.strokeText(line, canvas.width / 2, y, canvas.width * .9);
-    context.fillText(line, canvas.width / 2, y, canvas.width * .9);
-    y += lineHeight;
-  }
-}
-function stopExportWithError(message) {
-  setStatus(message);
-  if (activeRecorder && activeRecorder.state !== 'inactive') activeRecorder.stop();
-  else finishExportCleanup();
-}
-function finishExportCleanup() {
-  isExporting = false;
-  cancelAnimationFrame(animationFrame);
-  if (audioStartTimer) clearTimeout(audioStartTimer);
-  audioStartTimer = 0;
-  localAudio.pause();
-  video.pause();
-  if (activeStream) activeStream.getTracks().forEach(track => track.stop());
-  activeStream = null;
-  activeRecorder = null;
-  $('export').disabled = false;
-}
-$('export').addEventListener('click', async () => {
-  if (!video.src || isExporting) return;
-  if (!window.MediaRecorder || !HTMLCanvasElement.prototype.captureStream) { setStatus('التصدير غير مدعوم في هذا المتصفح. حدّث Chrome أو استعمل حاسوباً.'); return; }
-  const from = Number($('start').value);
-  const to = Number($('end').value);
-  if (!Number.isFinite(from) || !Number.isFinite(to) || to <= from) { setStatus('تأكد أن نهاية المقطع تأتي بعد بدايته.'); return; }
-  const sourceWidth = video.videoWidth || 1280;
-  const sourceHeight = video.videoHeight || 720;
-  const scale = Math.min(1, 1920 / sourceWidth, 1920 / sourceHeight);
-  const canvas = document.createElement('canvas');
-  canvas.width = Math.max(2, Math.floor(sourceWidth * scale / 2) * 2);
-  canvas.height = Math.max(2, Math.floor(sourceHeight * scale / 2) * 2);
-  const context = canvas.getContext('2d');
-  if (!context) { setStatus('تعذر تجهيز مساحة التصدير في هذا الجهاز.'); return; }
-  const stream = canvas.captureStream(30);
-  let audioIncluded = false;
-  try {
-    if (typeof video.captureStream === 'function') {
-      const videoStream = video.captureStream();
-      videoStream.getAudioTracks().forEach(track => { stream.addTrack(track); audioIncluded = true; });
-    }
-    if (localAudioURL && typeof localAudio.captureStream === 'function') {
-      const audioStream = localAudio.captureStream();
-      audioStream.getAudioTracks().forEach(track => { stream.addTrack(track); audioIncluded = true; });
-    }
-  } catch (error) { console.warn('Audio capture unavailable:', error); }
-  const mimeType = ['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(type => MediaRecorder.isTypeSupported(type)) || '';
-  let recorder;
-  try { recorder = new MediaRecorder(stream, mimeType ? {mimeType} : undefined); }
-  catch (error) { stream.getTracks().forEach(track => track.stop()); setStatus('تعذر تشغيل مسجل الفيديو في هذا المتصفح.'); return; }
-  activeRecorder = recorder;
-  activeStream = stream;
-  const chunks = [];
-  recorder.ondataavailable = event => { if (event.data && event.data.size) chunks.push(event.data); };
-  recorder.onerror = () => stopExportWithError('وقع خطأ أثناء تسجيل الفيديو. جرّب مقطعاً أقصر.');
-  recorder.onstop = () => {
-    const blob = new Blob(chunks, {type:recorder.mimeType || 'video/webm'});
-    if (blob.size > 0) {
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'MOUNIR_STUDIO_Quran_Edit.webm';
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 60000);
-      setStatus(`اكتمل التصدير. حجم الملف ${(blob.size / 1024 / 1024).toFixed(1)} ميغابايت.${audioIncluded ? '' : ' ملاحظة: لم يتمكن المتصفح من التقاط الصوت.'}`);
-    } else setStatus('لم ينتج ملف فيديو. جرّب مقطعاً أقصر أو متصفحاً آخر.');
-    finishExportCleanup();
-  };
-  isExporting = true;
-  $('export').disabled = true;
-  quranAudio.pause();
-  localAudio.pause();
-  video.pause();
-  setStatus('جارٍ تجهيز الفيديو... لا تغلق الصفحة أثناء التصدير.');
-  try {
-    if (Math.abs(video.currentTime - from) > 0.05) {
-      await new Promise((resolve, reject) => {
-        const onSeeked = () => { cleanup(); resolve(); };
-        const onError = () => { cleanup(); reject(new Error('Video seek failed')); };
-        const cleanup = () => { video.removeEventListener('seeked', onSeeked); video.removeEventListener('error', onError); };
-        video.addEventListener('seeked', onSeeked, {once:true});
-        video.addEventListener('error', onError, {once:true});
-        video.currentTime = from;
-      });
-    }
-    recorder.start(300);
-    const delay = Math.max(0, Math.min(600, Number($('audioDelay').value) || 0));
-    if (localAudioURL) {
-      localAudio.currentTime = 0;
-      localAudio.volume = Number($('qVol').value);
-      audioStartTimer = window.setTimeout(() => {
-        if (isExporting) localAudio.play().catch(() => setStatus('الفيديو يُصدّر، لكن تعذر تشغيل ملف التلاوة. تحقق من الملف الصوتي.'));
-      }, delay * 1000);
-    }
-    await video.play();
-    const render = () => {
-      if (!isExporting) return;
-      try { drawVideoFrame(context, canvas); }
-      catch (error) { stopExportWithError('تعذر رسم أحد إطارات الفيديو. جرّب ملفاً آخر.'); return; }
-      if (video.currentTime >= to || video.ended) {
-        if (recorder.state !== 'inactive') recorder.stop();
-        return;
-      }
-      animationFrame = requestAnimationFrame(render);
-    };
-    render();
-    setStatus('جارٍ تصدير الفيديو... اترك الصفحة مفتوحة حتى يكتمل التحميل.');
-  } catch (error) {
-    console.error(error);
-    stopExportWithError('تعذر بدء التصدير أو تشغيل الفيديو. جرّب إعادة تحميل الصفحة.');
-  }
-});
-window.addEventListener('beforeunload', () => {
-  if (videoURL) URL.revokeObjectURL(videoURL);
-  if (localAudioURL) URL.revokeObjectURL(localAudioURL);
-});
-initCatalog();
-updateCaption();
-</script>
-</body>
-</html>
+    const [rData, sData] = await Promise.all([getJSON(`${API}/reciters`), getJSON(`${API}/surahs`)]);
+    
